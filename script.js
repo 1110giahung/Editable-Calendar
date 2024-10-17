@@ -1,10 +1,7 @@
 const calendar = document.querySelector(".calendar"),
     date = document.querySelector(".date"),
     daysContainer = document.querySelector(".days"),
-
-    
-
-    prev = document.querySelector(".prev");
+    prev = document.querySelector(".prev"),
     next = document.querySelector(".next");
 
 
@@ -72,9 +69,28 @@ initCalendar();
 
 function prevMonth()
 {
-
+  month--;
+  if(month < 0)
+  {
+    month = 11;
+    year--;
+  }
+  initCalendar();
 }
 
+function nextMonth()
+{
+  month++
+  if(month > 11)
+  {
+    month = 0;
+    year++;
+  }
+  initCalendar();
+}
+
+prev.addEventListener("click", prevMonth);
+next.addEventListener("click", nextMonth);
 
 
 
