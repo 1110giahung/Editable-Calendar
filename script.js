@@ -7,8 +7,6 @@ const calendar = document.querySelector(".calendar"),
     prev = document.querySelector(".prev");
     next = document.querySelector(".next");
 
-const navs = document.querySelectorAll("#prev, #next");
-
 
 let today = new Date();
 let activeDay;
@@ -69,34 +67,15 @@ function initCalendar() {
 
     daysContainer.innerHTML = days;
   }
-  
-  
-
-
-
-
-navs.forEach((i) => {
-  i.addEventListener("click", (e) => {
-    const btnId = e.target.id;
-
-    if (btnId === "prev" && month === 0) {
-      year--;
-      month = 11;
-    } else if (btnId === "next" && month === 11) {
-      year++;
-      month = 0;
-    } else {
-      month = btnId === "next" ? month + 1 : month - 1;
-    }
-
-    date = new Date(year, month, new Date().getDate());
-    year = date.getFullYear();
-    month = date.getMonth();
-
-    initCalendar();
-  });
-});
 
 initCalendar();
+
+function prevMonth()
+{
+
+}
+
+
+
 
 
