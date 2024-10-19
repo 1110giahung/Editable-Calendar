@@ -48,7 +48,7 @@ const months = [
 //   },
 // ];
 const eventsArr = [];
-
+getEvents();
 
 //add days function
 function initCalendar() {
